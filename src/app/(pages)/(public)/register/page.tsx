@@ -1,16 +1,9 @@
-import { z } from 'zod';
-import { Input } from '../../../../components/ui/input';
+import { RegisterForm } from './(components)/(RegisterForm)/RegisterForm';
 
 export default function Register() {
-	const registerSchema = z.object({
-		username: z.string().min(2).max(50),
-	});
-
 	return (
-		<div>
-			<form>
-				<Input type="email" placeholder="Email" />
-			</form>
+		<div className="w-1/1 h-1/1 min-h-[1200px] bg-background flex flex-col items-center justify-center">
+			<RegisterForm />
 		</div>
 	);
 }

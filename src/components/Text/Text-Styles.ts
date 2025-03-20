@@ -7,6 +7,9 @@ export const TextStyles = cva('text-main', {
 			secondary: 'text-main-secondary',
 			dark: 'text-main-dark',
 			light: 'text-main-light',
+			red: 'text-main-red',
+			dark_red: 'text-main-darkRed',
+			light_red: 'text-main-lightRed',
 		},
 
 		size: {
@@ -17,7 +20,7 @@ export const TextStyles = cva('text-main', {
 		weight: {
 			normal: '',
 			semibold: 'font-semibold',
-			bold: 'bold',
+			bold: 'font-bold',
 		},
 
 		uppercase: {

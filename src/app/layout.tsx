@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Header from '../components/Header/Header';
 import '../styles/globals.css';
+import ThemeToggle from '../components/Dummy/ThemeToggle'; // Importe o ThemeToggle
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -32,10 +33,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="dark">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} antialiased`} // Adicionando a variável Quicksand
+				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} antialiased`}
 			>
+				<ThemeToggle /> {/* Botão para alternar o tema */}
 				<Header />
 				{children}
 			</body>
