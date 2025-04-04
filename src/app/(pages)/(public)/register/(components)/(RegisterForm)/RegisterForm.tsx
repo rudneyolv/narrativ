@@ -1,141 +1,138 @@
-'use client';
+/** @format */
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { Button } from '@/components/ui/button';
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
 import {
-	Form,
-	FormControl,
-	FormDescription,
-	FormField,
-	FormItem,
-	FormLabel,
-	FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { registerSchema } from '../../(validations)/registerSchema';
-import { Column } from '@/components/containers/Column/Column';
-import Text from '@/components/Text/Text';
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Column } from "@/components/containers/Column/Column";
+import Text from "@/components/Text/Text";
+import { useRegisterUser } from "@/hooks/api/useAuth";
+import { isBackendError } from "@/utils/api/isBackendError";
+import { registerSchema } from "@/schemas/auth/registerSchema";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export function RegisterForm() {
-	const formSchema = registerSchema;
+  const router = useRouter();
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const config = {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(values),
-		};
+  const formSchema = registerSchema;
+  const { mutate: registerUser, isPending } = useRegisterUser();
 
-		try {
-			const response = await fetch(
-				'http://localhost:3100/auth/register',
-				config
-			);
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    registerUser(values, {
+      onSuccess: () => {
+        toast.success("success.user_registered");
+        router.push("/login");
+      },
 
-			const data = await response.json();
+      onError: (error) => {
+        if (isBackendError(error) && error.errors) {
+          error.errors.forEach((err) => {
+            form.setError(err.field as "username" | "email" | "password" | "confirm_password", {
+              message: err.message,
+              type: "server",
+            });
+          });
+        } else {
+          toast.error("error.unknown");
+        }
+      },
+    });
+  };
 
-			if (!response.ok) {
-				if (data.errors) {
-					data.errors.forEach((error: { field: string; message: string }) => {
-						form.setError(
-							error.field as
-								| 'username'
-								| 'email'
-								| 'password'
-								| 'confirm_password',
-							{
-								message: error.message,
-								type: 'server',
-							}
-						);
-					});
-				}
-			}
-		} catch {}
-	}
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    mode: "onTouched",
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+      confirm_password: "",
+    },
+  });
 
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
-		mode: 'onChange',
-		defaultValues: {
-			username: '',
-			email: '',
-			password: '',
-			confirm_password: '',
-		},
-	});
+  return (
+    <div className="w-72 shadow-base rounded-xl p-5">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username</FormLabel>
+                <FormControl>
+                  <Input placeholder="username" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-	return (
-		<div className="w-72">
-			<Form {...form}>
-				<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-					<FormField
-						control={form.control}
-						name="username"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Username</FormLabel>
-								<FormControl>
-									<Input placeholder="username" {...field} />
-								</FormControl>
-							</FormItem>
-						)}
-					/>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="e-mail" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-					<FormField
-						control={form.control}
-						name="email"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Email</FormLabel>
-								<FormControl>
-									<Input placeholder="e-mail" {...field} />
-								</FormControl>
-							</FormItem>
-						)}
-					/>
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input placeholder="password" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-					<FormField
-						control={form.control}
-						name="password"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Password</FormLabel>
-								<FormControl>
-									<Input placeholder="password" {...field} />
-								</FormControl>
-							</FormItem>
-						)}
-					/>
+          <FormField
+            control={form.control}
+            name="confirm_password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm Password</FormLabel>
+                <FormControl>
+                  <Input placeholder="Confirm your password" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-					<FormField
-						control={form.control}
-						name="confirm_password"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Confirm Password</FormLabel>
-								<FormControl>
-									<Input placeholder="Confirm your password" {...field} />
-								</FormControl>
-							</FormItem>
-						)}
-					/>
+          {/* <Column>
+            {Object.entries(form.formState.errors || {}).map(([key, error]) => (
+              <Text key={key} text={error?.message || ""} color="dark_red" />
+            ))}
+          </Column> */}
 
-					<Column>
-						{Object.entries(form.formState.errors).map(([key, error]) => (
-							<Text key={key} text={error?.message || ''} color="dark_red" />
-						))}
-					</Column>
-
-					<Button type="submit" variant="neumorphic" size="full">
-						Submit
-					</Button>
-				</form>
-			</Form>
-		</div>
-	);
+          <Button type="submit" variant="neumorphic" size="full" isLoading={isPending}>
+            Submit
+          </Button>
+        </form>
+      </Form>
+    </div>
+  );
 }
