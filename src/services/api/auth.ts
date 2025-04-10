@@ -4,8 +4,6 @@ import { LoginUser, RegisterUser } from "@/interfaces/api/authInterfaces";
 import { getRandomValues } from "crypto";
 
 export const registerUser = async (values: RegisterUser) => {
-  console.log(getRandomValues);
-
   const response = await fetch("http://localhost:3100/api/auth/register", {
     method: "POST",
     headers: { "Content-Type": "Application/Json" },
@@ -24,6 +22,7 @@ export const registerUser = async (values: RegisterUser) => {
 export const loginUser = async (values: LoginUser) => {
   const response = await fetch("http://localhost:3100/api/auth/login", {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "Application/Json" },
     body: JSON.stringify(values),
   });

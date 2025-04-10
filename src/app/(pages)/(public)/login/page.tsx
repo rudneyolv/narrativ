@@ -29,19 +29,22 @@ export default function Login() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     loginUser(values, {
       onSuccess: () => {
-        router.push("/profile");
+        router.push("/dashboard");
       },
 
       onError: (error) => {
+        console.log("U ERRRO AQUI Ó", error);
+
         if (isBackendError(error) && error.errors) {
-          error.errors.forEach((err) => {
+          toast.error(error.message);
+          error?.errors?.forEach((err) => {
             form.setError(err.field as "email" | "password", {
               message: err.message,
               type: "server",
             });
           });
         } else {
-          toast.error("error.unknown");
+          toast.error(error.message || "error.unknown");
         }
       },
     });
