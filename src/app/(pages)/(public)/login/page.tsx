@@ -61,7 +61,7 @@ export default function Login() {
 
   return (
     <div className="w-1/1 h-1/1 min-h-[1200px] bg-background flex flex-col items-center justify-center">
-      <div className="w-72 shadow-base rounded-xl p-5 bg-background">
+      <div className="w-72 shadow-neumorphic rounded-xl p-5 bg-background">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
             <FormField

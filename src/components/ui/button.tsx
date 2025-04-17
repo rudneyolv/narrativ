@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         neumorphic:
-          "text-sm text-shadow-base border-input bg-background shadow-base hover:bg-ring active:shadow-none active:text-xs",
+          "text-sm text-shadow-neumorphic border-input bg-background shadow-neumorphic hover:bg-ring active:shadow-none active:text-xs",
       },
       size: {
         default: "h-9 px-4 py-2",

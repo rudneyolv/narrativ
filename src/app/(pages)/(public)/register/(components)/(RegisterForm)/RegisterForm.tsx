@@ -63,7 +63,7 @@ export function RegisterForm() {
   });
 
   return (
-    <div className="w-72 shadow-base rounded-xl p-5">
+    <div className="w-72 shadow-neumorphic rounded-xl p-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
           <FormField
