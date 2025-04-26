@@ -20,6 +20,7 @@ const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-quicksand",
+  fallback: ["sans-serif"],
 });
 
 const geistMono = Geist_Mono({

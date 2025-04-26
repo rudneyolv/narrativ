@@ -22,9 +22,9 @@ export const registerUser = async (values: RegisterUser) => {
 export const loginUser = async (values: LoginUser) => {
   const response = await fetch("http://localhost:3100/api/auth/login", {
     method: "POST",
-    credentials: "include",
     headers: { "Content-Type": "Application/Json" },
     body: JSON.stringify(values),
+    credentials: "include",
   });
 
   const data = await response.json();

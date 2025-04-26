@@ -1,17 +1,20 @@
-import Link from 'next/link';
+/** @format */
 
-interface CustomLinkProps {
-	href: string;
-	label: string;
+import Link from "next/link";
+import { CustomLinkStyles } from "./CustomLink-Styles";
+import { VariantProps } from "class-variance-authority";
+
+type CustomLinkStylesProps = VariantProps<typeof CustomLinkStyles>;
+
+interface CustomLinkProps extends CustomLinkStylesProps {
+  href: string;
+  label: string;
 }
 
-export default function CustomLink({ href, label }: CustomLinkProps) {
-	return (
-		<Link
-			href={href}
-			className="text-main-dark  font-primary font-semibold uppercase transition-all duration-300 ease-in-out hover:text-main-xdark"
-		>
-			{label}
-		</Link>
-	);
+export default function CustomLink({ href, label, color, hoverColor }: CustomLinkProps) {
+  return (
+    <Link href={href} className={CustomLinkStyles({ color, hoverColor })}>
+      {label}
+    </Link>
+  );
 }

@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "placehold.co",
+        hostname: "avatar.iran.liara.run",
+      },
+
+      {
+        protocol: "https",
+        hostname: "fakeimg.pl",
       },
     ],
   },

@@ -1,38 +1,25 @@
-import { cva } from 'class-variance-authority';
+/** @format */
 
-export const TextStyles = cva('text-main', {
-	variants: {
-		color: {
-			primary: 'text-main-primary',
-			secondary: 'text-main-secondary',
-			dark: 'text-main-dark',
-			light: 'text-main-light',
-			red: 'text-main-red',
-			dark_red: 'text-main-darkRed',
-			light_red: 'text-main-lightRed',
-		},
+import { colors, sizes, textCases, weights } from "@/constants/styles";
+import { cva } from "class-variance-authority";
 
-		size: {
-			sm: 'text-sm',
-			lg: 'text-lg',
-		},
+export const TextStyles = cva("", {
+  variants: {
+    color: colors,
+    weight: weights,
+    size: sizes,
+    textCase: textCases,
+    variant: {
+      flat: "",
+      elevated: "text-shadow-elevated",
+    },
+  },
 
-		weight: {
-			normal: '',
-			semibold: 'font-semibold',
-			bold: 'font-bold',
-		},
-
-		uppercase: {
-			true: 'uppercase',
-			false: 'normal-case',
-		},
-	},
-
-	defaultVariants: {
-		color: 'primary',
-		size: 'sm',
-		weight: 'normal',
-		uppercase: false,
-	},
+  defaultVariants: {
+    color: "white",
+    size: "sm",
+    weight: "normal",
+    textCase: "normal",
+    variant: "flat",
+  },
 });

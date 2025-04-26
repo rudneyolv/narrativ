@@ -22,19 +22,17 @@ import { isBackendError } from "@/utils/api/isBackendError";
 
 export default function Login() {
   const formSchema = loginSchema;
-
   const router = useRouter();
   const { mutate: loginUser, isPending } = useLoginUser();
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     loginUser(values, {
-      onSuccess: () => {
-        router.push("/dashboard");
+      onSuccess: (response) => {
+        const username = response.data.username;
+        router.push(`/user/${username}`);
       },
 
       onError: (error) => {
-        console.log("U ERRRO AQUI Ó", error);
-
         if (isBackendError(error) && error.errors) {
           toast.error(error.message);
           error?.errors?.forEach((err) => {
