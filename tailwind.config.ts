@@ -2,7 +2,13 @@
 
 import type { Config } from "tailwindcss";
 import { Quicksand } from "next/font/google";
-import { colors, sizes, textCases, weights } from "@/constants/styles";
+import {
+  baseColors,
+  baseHoverColors,
+  baseSizes,
+  baseTextCases,
+  baseWeights,
+} from "./src/constants/styles";
 
 export default {
   darkMode: ["class"],
@@ -135,7 +141,14 @@ export default {
       },
     },
   },
-  // safelist: ["text-sm", "text-base", "text-lg", "text-xl", "text-2xl", "text-3xl"],
+  safelist: [
+    ...Object.values(baseColors),
+    ...Object.values(baseHoverColors),
+    ...Object.values(baseSizes),
+    ...Object.values(baseWeights),
+    ...Object.values(baseTextCases),
+  ],
+
   plugins: [
     require("tailwindcss-animate"),
     require("tailwindcss-textshadow"),

@@ -1,6 +1,6 @@
 /** @format */
 
-export const colors = {
+export const baseColors = {
   primary: "text-main-primary",
   secondary: "text-main-secondary",
   light: "text-main-light",
@@ -16,7 +16,7 @@ export const colors = {
   darkRed: "text-main-darkRed",
 };
 
-export const hoverColors = {
+export const baseHoverColors = {
   primary: "hover:text-main-primary",
   secondary: "hover:text-main-secondary",
   light: "hover:text-main-light",
@@ -32,7 +32,7 @@ export const hoverColors = {
   darkRed: "hover:text-main-darkRed",
 };
 
-export const sizes = {
+export const baseSizes = {
   sm: "text-sm",
   base: "text-base",
   lg: "text-lg",
@@ -41,15 +41,21 @@ export const sizes = {
   "3xl": "text-3xl",
 };
 
-export const weights = {
+export const baseWeights = {
   normal: "font-normal",
   semibold: "font-semibold",
   bold: "font-bold",
   extrabold: "font-extrabold",
 };
 
-export const textCases = {
+export const baseTextCases = {
   normal: "normal-case",
   uppercase: "uppercase",
   lowercase: "lowercase",
 };
+
+export type BaseColors = keyof typeof baseColors;
+export type BaseHoverColors = keyof typeof baseHoverColors;
+export type BaseSizes = keyof typeof baseSizes;
+export type BaseWeights = keyof typeof baseWeights;
+export type BaseTextCases = keyof typeof baseTextCases;
