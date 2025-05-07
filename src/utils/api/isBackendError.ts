@@ -4,7 +4,7 @@ interface BackendError {
   message: string;
   errors: Array<{
     field?: string;
-    message: string;
+    field_message?: string;
   }>;
 }
 

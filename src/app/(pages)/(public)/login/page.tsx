@@ -37,7 +37,7 @@ export default function Login() {
           toast.error(error.message);
           error?.errors?.forEach((err) => {
             form.setError(err.field as "email" | "password", {
-              message: err.message,
+              message: err.field_message,
               type: "server",
             });
           });

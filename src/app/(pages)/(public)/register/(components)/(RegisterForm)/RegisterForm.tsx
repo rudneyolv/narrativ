@@ -38,9 +38,11 @@ export function RegisterForm() {
 
       onError: (error) => {
         if (isBackendError(error) && error.errors) {
+          toast.error(error.message);
+
           error.errors.forEach((err) => {
             form.setError(err.field as "username" | "email" | "password" | "confirm_password", {
-              message: err.message,
+              message: err.field_message,
               type: "server",
             });
           });
