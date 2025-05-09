@@ -2,8 +2,8 @@
 
 import { ProfileHeader } from "@/components/Profile/ProfileHeader/ProfileHeader";
 import React, { Suspense } from "react";
-import { ProfileFetcher } from "./(components)/ProfileFetcher";
-import { ProfileSkl } from "./(components)/ProfileSkl";
+import { CompleteProfile } from "@/components/Profile/CompleteProfile/CompleteProfile";
+import { CompleteProfileSkeleton } from "@/components/Profile/CompleteProfile/CompleteProfileSkeleton";
 
 interface ProfileLayoutProps {
   children: React.ReactNode;
@@ -15,8 +15,8 @@ export default async function ProfileLayout({ children, params }: ProfileLayoutP
 
   return (
     <div>
-      <Suspense fallback={<ProfileSkl />}>
-        <ProfileFetcher username={username} />
+      <Suspense fallback={<CompleteProfileSkeleton />}>
+        <CompleteProfile username={username} />
       </Suspense>
 
       <ProfileHeader />
