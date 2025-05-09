@@ -91,7 +91,7 @@ export default {
           "inset 4px 4px 6px hsl(var(--shadow-neumorphic)), inset -1px -1px 8px hsl(var(--light-base))",
         neumorphic:
           "4px 4px 6px hsl(var(--shadow-neumorphic)), -1px -1px 8px hsl(var(--light-base))",
-        elevated: "10px 15px 10px rgba(0, 0, 0, 0.5)",
+        elevated: "6px 8px 8px rgba(0, 0, 0, 0.5)",
       },
 
       textShadow: {
