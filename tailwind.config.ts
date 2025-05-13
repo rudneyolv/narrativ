@@ -21,19 +21,28 @@ export default {
     extend: {
       colors: {
         main: {
-          primary: "hsl(var(--primary))",
-          secondary: "hsl(var(--secondary))",
-          light: "hsl(var(--light))",
-          medium: "hsl(var(--medium))",
-          dark: "hsl(var(--dark))",
-          xdark: "hsl(var(--xdark))",
-          ice: "hsl(var(--ice))",
-          pale: "hsl(var(--pale))",
-          black: "hsl(var(--black))",
-          white: "hsl(var(--white))",
-          red: "hsl(var(--red))",
-          lightRed: "hsl(var(--light-red))",
-          darkRed: "hsl(var(--dark-red))",
+          primary: "hsla(271, 100%, 50%, 1)",
+          secondary: "hsla(271, 100%, 70%, 1)",
+
+          dark: "hsla(220, 8%, 25%, 1)",
+          xdark: "hsla(220, 8%, 19%, 1)",
+
+          ice: "hsla(220, 14.3%, 94.1%, 1)",
+
+          frost: "hsla(220, 14.3%, 82%, 1)",
+          gray: "hsla(220, 9%, 45%, 1)",
+          xgray: "hsla(220, 13%, 33%, 1)",
+
+          black: "hsla(220, 10%, 7%, 1)",
+          white: "hsla(0, 0%, 100%, 1)",
+        },
+
+        transparent: {
+          black: "hsla(220, 20%, 15%, 0.5)",
+        },
+
+        glass: {
+          black: "hsla(220, 20%, 15%, 0.7)",
         },
 
         shadow: {
@@ -44,21 +53,6 @@ export default {
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
 
         accent: {
           DEFAULT: "hsl(var(--accent))",

@@ -8,7 +8,7 @@ export default async function Header() {
   const username = cookieStore.get("username")?.value;
 
   return (
-    <header className="bg-main-light flex items-center justify-center gap-3 p-4">
+    <header className="w-full bg-transparent-black fixed top-0 z-10 gap-3 p-4 transition-colors duration-500 hover:bg-glass-black">
       <nav className="flex items-center justify-center gap-3">
         <CustomLink href="/" label="Home" />
         <CustomLink href={`/user/${username}`} label="Meu perfil" />

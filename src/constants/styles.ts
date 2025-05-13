@@ -3,17 +3,14 @@
 export const baseColors = {
   primary: "text-main-primary",
   secondary: "text-main-secondary",
-  light: "text-main-light",
-  medium: "text-main-medium",
   dark: "text-main-dark",
   xdark: "text-main-xdark",
   ice: "text-main-ice",
-  pale: "text-main-pale",
+  frost: "text-main-frost",
+  gray: "text-main-gray",
+  xgray: "text-main-xgray",
   black: "text-main-black",
   white: "text-main-white",
-  red: "text-main-red",
-  lightRed: "text-main-lightRed",
-  darkRed: "text-main-darkRed",
 };
 
 export const baseHoverColors = {
@@ -27,9 +24,6 @@ export const baseHoverColors = {
   pale: "hover:text-main-pale",
   black: "hover:text-main-black",
   white: "hover:text-main-white",
-  red: "hover:text-main-red",
-  lightRed: "hover:text-main-lightRed",
-  darkRed: "hover:text-main-darkRed",
 };
 
 export const baseSizes = {

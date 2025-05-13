@@ -21,8 +21,8 @@ export const CustomLinkStyles = cva(
     },
 
     defaultVariants: {
-      color: "pale",
-      hoverColor: "primary",
+      color: "frost",
+      hoverColor: "ice",
     },
   }
 );

@@ -2,22 +2,28 @@
 
 import CustomLink from "@/components/CustomLink/CustomLink";
 
-export const ProfileHeader = () => {
+interface ProfileHeaderProps {
+  username: string;
+}
+
+export const ProfileHeader = ({ username }: ProfileHeaderProps) => {
   return (
-    <div className="bg-black w-1/1 flex items-center justify-center p-4">
+    <div className="bg-main-black w-1/1 flex items-center justify-center p-4">
       <nav className="flex items-center flex-row justify-center gap-4">
+        <CustomLink label="Home" href={`/user/${username}`} color="frost" hoverColor="ice" />
+
         <CustomLink
           label="Minha lista"
-          href={`/user/1/watchlist`}
-          color="white"
-          hoverColor="primary"
+          href={`/user/${username}/watchlist`}
+          color="frost"
+          hoverColor="ice"
         />
 
         <CustomLink
           label="Favoritos"
-          href={`/user/1/favorites`}
-          color="white"
-          hoverColor="primary"
+          href={`/user/${username}/favorites`}
+          color="frost"
+          hoverColor="ice"
         />
       </nav>
     </div>

@@ -19,7 +19,7 @@ export default async function ProfileLayout({ children, params }: ProfileLayoutP
         <CompleteProfile username={username} />
       </Suspense>
 
-      <ProfileHeader />
+      <ProfileHeader username={username} />
       {children}
     </div>
   );

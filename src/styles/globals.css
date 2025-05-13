@@ -8,78 +8,28 @@
   :root {
     /* Cores base */
     --background: 0 0% 90%; /* Branco */
-    --foreground: 291, 0%, 14%; /* Cinza escuro */
-    /* Cores do tema light */
-    --primary: 271 100% 50%; /* #8f00ff em HSL */
-    --primary-foreground: 210 20% 98%; /* Branco azulado */
-    --secondary: 271 100% 70%; /* #c724ff em HSL (versão mais clara do primary) */
-    --secondary-foreground: 220.9 39.3% 11%; /* Preto azulado */
-    --muted: 220 14.3% 95.9%; /* Cinza claro */
-    --muted-foreground: 220 8.9% 46.1%; /* Cinza médio */
+    --foreground: 291, 0%, 10%; /* Cinza escuro */
     --accent: 271 100% 30%;
     --accent-foreground: 271 100% 50%;
     --destructive: 0 84.2% 60.2%; /* Vermelho */
     --destructive-foreground: 210 20% 98%; /* Branco azulado */
-    --border: 220 13% 91%; /* Cinza claro */
-    --input: 220 13% 91%; /* Cinza claro */
-    --ring: 271 100% 50% / 0.15;
-
-    /* Cores adicionais */
-    --light: 220 14.3% 96.1%; /* #f1f3f6 em HSL */
-    --medium: 220 14.3% 86.1%; /* #d1d9e6 em HSL */
-    --dark: 220 8% 25%; /* #3A3D42 em HSL */
-    --xdark: 220 8% 19%; /* #2C2F34 em HSL */
-    --ice: 220 14.3% 94.1%; /* #ecf0f3 em HSL */
-    --pale: 220 14.3% 90.1%; /* #dde1e7 em HSL */
-    --black: 220 20% 15%; /* #1f2933 em HSL */
-    --white: 0 0% 100%; /* #ffffff em HSL */
-    --red: 0, 100%, 50%;
-    --light-red: 0, 100%, 75%;
-    --dark-red: 0, 100%, 25%;
 
     /* Bordas e raio */
     --radius: 1rem;
-
     --shadow-neumorphic: 301 0% 75%; /* Sombra padrão */
-
     --light-base: 301 0% 100%; /* Variante média */
-
     --default-transition-duration: 450ms;
   }
 }
 
 .dark {
   /* Cores base */
-  --background: 291, 0%, 14%; /* Cinza escuro */
+  --background: 291, 0%, 10%; /* Cinza escuro */
   --foreground: 210 20% 98%; /* Branco azulado */
-
-  /* Cores do tema dark */
-  --primary: 271 100% 50%; /* #8f00ff em HSL */
-  --primary-foreground: 210 20% 98%; /* Branco azulado */
-  --secondary: 271 100% 70%; /* #c724ff em HSL (versão mais clara do primary) */
-  --secondary-foreground: 210 20% 98%; /* Branco azulado */
-  --muted: 215 27.9% 16.9%; /* Cinza escuro */
-  --muted-foreground: 217.9 10.6% 64.9%; /* Cinza médio */
   --accent: 271 100% 30%;
   --accent-foreground: 210 20% 100%; /* Branco azulado */
   --destructive: 0 62.8% 30.6%; /* Vermelho escuro */
   --destructive-foreground: 210 20% 98%; /* Branco azulado */
-  --border: 215 27.9% 16.9%; /* Cinza escuro */
-  --input: 215 27.9% 16.9%; /* Cinza escuro */
-  --ring: 271 100% 50% / 0.15;
-
-  /* Cores adicionais */
-  --light: 220 14.3% 10%; /* Versão escura de #f1f3f6 */
-  --medium: 220 14.3% 20%; /* Versão escura de #d1d9e6 */
-  --dark: 220 8% 35%; /* Versão clara de #3A3D42 */
-  --xdark: 220 8% 25%; /* Versão clara de #2C2F34 */
-  --ice: 220 14.3% 15%; /* Versão escura de #ecf0f3 */
-  --pale: 220 14.3% 18%; /* Versão escura de #dde1e7 */
-  --black: 220 20% 10%; /* Versão mais escura de #1f2933 */
-  --white: 0 0% 100%; /* #ffffff em HSL */
-  --red: 0, 100%, 50%;
-  --light-red: 0, 100%, 75%;
-  --dark-red: 0, 100%, 25%;
 
   --shadow-neumorphic: 301 0% 5%; /* Sombra padrão */
   --light-base: 301 0% 30%; /* Variante mais clara */
