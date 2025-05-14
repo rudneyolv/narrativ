@@ -1,6 +1,8 @@
 /** @format */
 
 export const baseColors = {
+  background: "text-background",
+  foreground: "text-foreground",
   primary: "text-main-primary",
   secondary: "text-main-secondary",
   dark: "text-main-dark",
@@ -14,23 +16,25 @@ export const baseColors = {
 };
 
 export const baseHoverColors = {
+  background: "hover:text-background",
+  foreground: "hover:text-foreground",
   primary: "hover:text-main-primary",
   secondary: "hover:text-main-secondary",
-  light: "hover:text-main-light",
-  medium: "hover:text-main-medium",
   dark: "hover:text-main-dark",
   xdark: "hover:text-main-xdark",
   ice: "hover:text-main-ice",
-  pale: "hover:text-main-pale",
+  frost: "hover:text-main-frost",
+  gray: "hover:text-main-gray",
+  xgray: "hover:text-main-xgray",
   black: "hover:text-main-black",
   white: "hover:text-main-white",
 };
 
 export const baseSizes = {
   sm: "text-sm",
-  base: "text-base",
-  lg: "text-lg",
-  xl: "text-xl",
+  base: "text-xs md:text-base",
+  lg: "text-base md:text-xl",
+  xl: "text-lg md:text-xl",
   "2xl": "text-2xl",
   "3xl": "text-3xl",
 };

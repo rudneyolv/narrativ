@@ -19,7 +19,7 @@ export const CompleteProfile = async ({ username }: CompleteProfileProps) => {
     <Profile.Root>
       <Profile.Banner src={data?.profile_banner_url}>
         <Profile.Avatar src={data?.profile_image_url} variant="elevated" />
-        <Text text={data?.username} variant="elevated" weight="normal" size="xl" />
+        <Text text={data?.username} variant="elevated" weight="semibold" size="xl" />
       </Profile.Banner>
     </Profile.Root>
   );

@@ -38,11 +38,11 @@ export default {
         },
 
         transparent: {
-          black: "hsla(220, 20%, 15%, 0.5)",
+          black: "hsla(0, 0%, 0%, 0.2)",
         },
 
         glass: {
-          black: "hsla(220, 20%, 15%, 0.7)",
+          black: "hsla(0, 0%, 0%, 0.5)",
         },
 
         shadow: {
@@ -53,6 +53,7 @@ export default {
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        neutral: "hsl(var(--neutral))",
 
         accent: {
           DEFAULT: "hsl(var(--accent))",

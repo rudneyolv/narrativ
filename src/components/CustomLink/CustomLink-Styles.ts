@@ -21,6 +21,7 @@ export const CustomLinkStyles = cva(
     },
 
     defaultVariants: {
+      size: "base",
       color: "frost",
       hoverColor: "ice",
     },

@@ -9,6 +9,7 @@
     /* Cores base */
     --background: 0 0% 90%; /* Branco */
     --foreground: 291, 0%, 10%; /* Cinza escuro */
+    --neutral: 0 0% 95%; /* Branco */
     --accent: 271 100% 30%;
     --accent-foreground: 271 100% 50%;
     --destructive: 0 84.2% 60.2%; /* Vermelho */
@@ -26,6 +27,7 @@
   /* Cores base */
   --background: 291, 0%, 10%; /* Cinza escuro */
   --foreground: 210 20% 98%; /* Branco azulado */
+  --neutral: 291, 0%, 5%; /* Cinza escuro */
   --accent: 271 100% 30%;
   --accent-foreground: 210 20% 100%; /* Branco azulado */
   --destructive: 0 62.8% 30.6%; /* Vermelho escuro */

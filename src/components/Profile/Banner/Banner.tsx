@@ -2,7 +2,7 @@
 
 import { images } from "@/constants/images";
 import { BannerProps } from "@/interfaces/profile.interfaces";
-import { BannerContainerStyles, BannerWrapperStyles } from "./Banner-Styles";
+import { BannerContainerStyles, BannerOverlayStyles, BannerWrapperStyles } from "./Banner-Styles";
 
 export const Banner = ({ src, children }: BannerProps) => {
   const bannerImage =
@@ -10,7 +10,11 @@ export const Banner = ({ src, children }: BannerProps) => {
 
   return (
     <div className={BannerWrapperStyles()} style={{ backgroundImage: `url(${bannerImage})` }}>
-      <div className={BannerContainerStyles()}>{children}</div>
+      <div className={BannerOverlayStyles()} />
+
+      <div className="relative z-10">
+        <div className={BannerContainerStyles()}>{children}</div>
+      </div>
     </div>
   );
 };
