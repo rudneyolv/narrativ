@@ -2,8 +2,8 @@
 
 import { ProfileHeader } from "@/components/Profile/ProfileHeader/ProfileHeader";
 import React, { Suspense } from "react";
-import { CompleteProfile } from "@/components/Profile/CompleteProfile/CompleteProfile";
-import { CompleteProfileSkeleton } from "@/components/Profile/CompleteProfile/CompleteProfileSkeleton";
+import { CompleteProfileSkeleton } from "./components/CompleteProfile/CompleteProfileSkeleton";
+import { CompleteProfile } from "./components/CompleteProfile/CompleteProfile";
 
 interface ProfileLayoutProps {
   children: React.ReactNode;
